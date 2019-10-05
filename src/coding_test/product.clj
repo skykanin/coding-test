@@ -1,4 +1,4 @@
-(ns coding-test.ex1
+(ns coding-test.product
   (:require [clojure.spec.alpha :as s]))
 
 ;; Function specification for highest-prod

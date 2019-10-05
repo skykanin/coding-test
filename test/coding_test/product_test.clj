@@ -1,7 +1,7 @@
-(ns coding-test.ex1-test
+(ns coding-test.product-test
   (:require [clojure.test :as t]
             [respeced.test :as rt]
-            [coding-test.ex1 :refer [highest-prod]]))
+            [coding-test.product :refer [highest-prod]]))
 
 ;; Validating the function input arguments for highest-prod
 (t/deftest valid-args
