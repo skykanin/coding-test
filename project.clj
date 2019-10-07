@@ -7,8 +7,9 @@
                  [org.clojure/clojure "1.10.1"]
                  [respeced "0.0.1"]
                  [ring/ring-core "1.7.1"]
+                 [ring/ring-jetty-adapter "1.7.1"]
                  [ring/ring-json "0.5.0"]
                  [ring/ring-mock "0.4.0"]]
-  :main coding-test.core
+  :main coding-test.calculator.core
   :test-paths ["test"])
 
