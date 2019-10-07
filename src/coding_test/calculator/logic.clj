@@ -15,8 +15,8 @@
   then splits string on spaces"
   [string]
   (-> string
-      (replace #"[(]+" #(str % " "))
-      (replace #"[)]+" #(str " " %))
+      (replace #"\(" #(str % " "))
+      (replace #"\)" #(str " " %))
       (split #" ")))
 
 (defn balanced-parens?
@@ -25,7 +25,8 @@
   (let [balance-fn (fn [acc el]
                      (case el
                        "(" (inc acc)
-                       ")" (dec acc) acc))
+                       ")" (dec acc)
+                       acc))
         res (reduce balance-fn 0 expr)]
     (zero? res)))
 
