@@ -11,5 +11,6 @@
                  [ring/ring-json "0.5.0"]
                  [ring/ring-mock "0.4.0"]]
   :main coding-test.calculator.core
+  :plugins [[lein-cljfmt "0.6.4"]]
   :test-paths ["test"])
 
