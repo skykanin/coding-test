@@ -21,15 +21,20 @@
 
 (defn balanced-parens?
   "Check if the expression contains balanced parenthesis"
-  [expr] 
+  [string] 
   (let [balance-fn (fn [acc el]
                      (case el
-                       "(" (inc acc)
-                       ")" (dec acc)
+                       \( (inc acc)
+                       \) (dec acc)
                        acc))
-        res (reduce balance-fn 0 expr)]
+        res (reduce balance-fn 0 string)]
     (zero? res)))
 
+(defn illegal-char?
+  "Checks if the expression contains illegal characters"
+  [string]
+  (seq (re-find #"[^0-9\+\-\*\/\(\)\s]" string)))
+ 
 (defn operator?
   "Checks if token is an operator"
   [token]
@@ -74,3 +79,5 @@
                     "/" (cons (/ y x) ys)
                     (cons (Integer/parseInt el) stack)))]
     (first (reduce reducer [] expr))))
+
+(def calculate (comp compute-postfix infix->postfix clean))
