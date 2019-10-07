@@ -6,7 +6,7 @@
             [compojure.route :refer [not-found]]
             [ring.middleware.json :refer [wrap-json-body
                                           wrap-json-response]]))
-             
+
 (defn error-handler-rep
   "HTTP error response template function"
   [status msg]

@@ -21,7 +21,7 @@
 
 (defn balanced-parens?
   "Check if the expression contains balanced parenthesis"
-  [string] 
+  [string]
   (let [balance-fn (fn [acc el]
                      (case el
                        \( (inc acc)
@@ -34,7 +34,7 @@
   "Checks if the expression contains illegal characters"
   [string]
   (seq (re-find #"[^0-9\+\-\*\/\(\)\s]" string)))
- 
+
 (defn operator?
   "Checks if token is an operator"
   [token]

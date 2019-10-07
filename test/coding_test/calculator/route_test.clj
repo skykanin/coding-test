@@ -33,7 +33,7 @@
          (construct-rep 200 {:result "78"})))
   (is (= (test-handler "-66 / (2 + 4)")
          (construct-rep 200 {:result "-11"}))))
-                             
+
 (deftest invalid-input-test
   (is (= (test-handler "")
          (construct-rep 400 {:error "Empty expression"})))

@@ -15,4 +15,4 @@
     (t/is (rt/caught? `highest-prod (highest-prod '(3 -4))))
     (t/is (rt/caught? `highest-prod (highest-prod "hello")))
     (t/is (rt/caught? `highest-prod (highest-prod [:a :b :c :d])))))
-  
+
