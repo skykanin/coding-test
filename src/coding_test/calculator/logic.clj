@@ -6,9 +6,7 @@
   {"+" 2
    "-" 2
    "*" 3
-   "/" 3
-   "(" 10
-   ")" 10})
+   "/" 3})
 
 (defn clean
   "Sets spaces between parens and next char,
