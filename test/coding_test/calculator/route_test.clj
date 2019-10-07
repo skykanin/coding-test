@@ -1,7 +1,6 @@
 (ns coding-test.calculator.route-test
   (:require [clojure.test :refer [deftest is]]
-            [coding-test.calculator.routes :refer [error-handler-rep
-                                                   expression-handler]]
+            [coding-test.calculator.routes :refer [expression-handler]]
             [ring.middleware.json :refer [wrap-json-body]]
             [ring.mock.request :as mock]
             [ring.util.response :refer [header response status]]))
