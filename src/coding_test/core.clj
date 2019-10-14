@@ -1,1 +1,0 @@
-(ns coding-test.core)
