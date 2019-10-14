@@ -26,6 +26,8 @@
 (deftest valid-input-test
   (is (= (test-handler "-1 * (2 * 6 / 3)")
          (construct-rep 200 {:result "-4"})))
+  (is (= (test-handler "-1 * ( 2 * 6 / 3 )")
+         (construct-rep 200 {:result "-4"})))
   (is (= (test-handler "10 * 34 / (9 + 11)")
          (construct-rep 200 {:result "17"})))
   (is (= (test-handler "-66 / 3 + 100")
