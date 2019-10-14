@@ -1,7 +1,10 @@
 (ns coding-test.calculator.logic
+  "This namespace contains all the logic for cleaning and
+  calculating the mathematical expression"
   (:refer-clojure :exclude [replace])
   (:require [clojure.string :refer [replace split]]))
 
+;; Operator precedence table
 (def precedence
   {"+" 2
    "-" 2
@@ -10,7 +13,8 @@
 
 (defn clean
   "Sets spaces between parens and next char,
-  then splits string on spaces"
+  then splits string on spaces and removes
+  any empty strings from the vector"
   [string]
   (-> string
       (replace #"\(" #(str % " "))

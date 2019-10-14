@@ -1,4 +1,5 @@
 (ns coding-test.calculator.routes
+  "This namespace contains the code for the rest api routes"
   (:require [coding-test.calculator.logic :refer [balanced-parens?
                                                   calculate
                                                   illegal-char?]]
@@ -30,6 +31,8 @@
      :headers {"Content-Type" "application/json"}
      :body {:result (str (calculate expr))}}))
 
+;; Define all the routes for the rest api and wrap
+;; responses and body with json middleware
 (defroutes app-routes
   (POST "/calc" request (wrap-json-response
                          (wrap-json-body
