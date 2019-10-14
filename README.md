@@ -15,16 +15,26 @@ The endpoint for sending a POST request is `/calc`. The body of the POST request
 ```
 {"expression": "-1 * (3 + 2)"}
 ```
-In the mathematical expression string all infix operators must have spaces between them. On the other hand parethesis must *not* have spaced between them.
+In the mathematical expression string all infix operators must have spaces between them. On the other hand parethesis can either have or not have spaced between them. Any negative numbers must be written without spaces. The Rest Api will handle expressions with unbalanced parens or empty expressions.
 ```
-// Correct
+// Valid
 {"expression": "8 / (1 + 3)"}
 
-// Invalid
+// Valid
 {"expression": "8 / ( 1 + 3 )"}
+
+// Valid
+{"expression": "-8 / (1 + 3)"}
 
 // Invalid
 {"expression": "8/(1+3)"}
+
+// Invalid
+{"expression": "8 / (1 + 3))"}
+
+// Invalid
+{"expression": "- 8 / (1 + 3)"}
+
 ```
 
 ## Where can I find the code for the specific tasks?
