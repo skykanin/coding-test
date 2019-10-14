@@ -15,7 +15,8 @@
   (-> string
       (replace #"\(" #(str % " "))
       (replace #"\)" #(str " " %))
-      (split #" ")))
+      (split #" ")
+      (->> (filterv (comp not empty?)))))
 
 (defn balanced-parens?
   "Check if the expression contains balanced parenthesis"
