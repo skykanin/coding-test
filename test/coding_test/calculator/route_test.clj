@@ -33,7 +33,11 @@
   (is (= (test-handler "-66 / 3 + 100")
          (construct-rep 200 {:result "78"})))
   (is (= (test-handler "-66 / (2 + 4)")
-         (construct-rep 200 {:result "-11"}))))
+         (construct-rep 200 {:result "-11"})))
+  (is (= (test-handler "8")
+         (construct-rep 200 {:result "8"})))
+  (is (= (test-handler "-10")
+         (construct-rep 200 {:result "-10"}))))
 
 (deftest invalid-input-test
   (is (= (test-handler "")
