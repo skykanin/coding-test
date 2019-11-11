@@ -14,4 +14,5 @@
   (let [sorted (sort ns)
         prod #(apply * %)]
     (max (prod (take-last 3 sorted))
-         (prod (cons (last sorted) (take 2 sorted))))))
+         (prod (cons (last sorted)
+                     (take 2 sorted))))))
