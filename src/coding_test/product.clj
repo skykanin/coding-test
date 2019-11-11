@@ -9,6 +9,10 @@
 
 (defn highest-prod
   "Returns the highest product of the three
-  largest numbers in a list"
+  integers in a list"
   [ns]
-  (apply * (take-last 3 (sort ns))))
+  (->> ns
+       (map #(Math/abs %))
+       sort
+       (take-last 3)
+       (apply *)))
