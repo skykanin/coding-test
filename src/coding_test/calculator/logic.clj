@@ -68,7 +68,7 @@
                    ")" (let [[take [_ & drop]]
                              (split-with (comp not #{"("}) operators)]
                          (recur el drop (into output take))))
-      (or (nil? input) (empty? input)) (if o (reverse (cons o output)) output)
+      (empty? input) (if o (reverse (cons o output)) output)
       :else (recur el operators (cons e output)))))
 
 (defn compute-postfix
