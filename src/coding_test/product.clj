@@ -8,11 +8,10 @@
   :ret int?)
 
 (defn highest-prod
-  "Returns the highest product of the three
-  integers in a list"
+  "Returns the highest product of a triplet
+  of integers from a list"
   [ns]
-  (->> ns
-       (map #(Math/abs %))
-       sort
-       (take-last 3)
-       (apply *)))
+  (let [sorted (sort ns)
+        prod #(apply * %)]
+    (max (prod (take-last 3 sorted))
+         (prod (cons (last sorted) (take 2 sorted))))))
